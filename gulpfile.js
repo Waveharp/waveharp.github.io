@@ -1,5 +1,18 @@
 var gulp = require('gulp');
+var browserSync = require('browser-sync');
+var reload = browserSync.reload;
 
-gulp.task('default', function() {
-	console.log("Gulp!");
+// watch files for changes and reload
+gulp.task('serve', function() {
+	browserSync({
+		server: {
+			baseDir: '.'
+		}
+	});
+
+	gulp.watch(['*.html', 'css/*.css'], {cwd: '.'}, reload);
+});
+
+gulp.task("default", ["serve"], function() {
+	console.log("Watching files");
 });
