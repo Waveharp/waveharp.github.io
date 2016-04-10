@@ -7,7 +7,9 @@
     "url": "git://github.com/Waveharp/waveharp.github.io.git"
   },
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp-postcss": "^6.1.0"
+  },
   "optionalDependencies": {},
   "engines": {
     "node": "*"
