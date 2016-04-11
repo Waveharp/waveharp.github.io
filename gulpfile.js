@@ -3,14 +3,26 @@ var gulp 				= require('gulp'),
     postcss 		= require('gulp-postcss'),
     sourcemaps  = require('gulp-sourcemaps'),
     lost 				= require('lost'),
-    rucksack    = require('gulp-rucksack');
+    rucksack    = require('rucksack-css');
 
 var reload 			= browserSync.reload;
 
-var paths = {
-	cssSource: 'src/css/',
-	cssDestination: 'dist/css/'
-};
+// PostCSS config
+gulp.task('css', function () {
+	var processors = [
+		rucksack(),
+	];
+	return gulp.src('./src/*.css')
+		.pipe(postcss(processors))
+		.pipe(gulp.dest('./dest'));
+});
+
+
+
+// var paths = {
+// 	cssSource: 'src/css/',
+// 	cssDestination: 'dist/css/'
+// };
 
 // lost, rucksack, sourcemaps
 // gulp.task('styles', function() {
