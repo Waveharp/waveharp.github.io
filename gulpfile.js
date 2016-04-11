@@ -1,8 +1,9 @@
-var gulp 				= require('gulp');
-var browserSync = require('browser-sync').create();
-var postcss 		= require('gulp-postcss');
-var sourcemaps  = require('gulp-sourcemaps');
-var lost 				= require('lost');
+var gulp 				= require('gulp'),
+    browserSync = require('browser-sync'),
+    postcss 		= require('gulp-postcss'),
+    sourcemaps  = require('gulp-sourcemaps'),
+    lost 				= require('lost'),
+    rucksack    = require('gulp-rucksack');
 
 var reload 			= browserSync.reload;
 
@@ -11,20 +12,21 @@ var paths = {
 	cssDestination: 'dist/css/'
 };
 
-// sourcemaps, lost
-gulp.task('styles', function() {
-	return gulp.src(paths.cssSource + '**/*.css')
-		.pipe(sourcemaps.init())
-		.pipe(postcss([
-			lost()
-		]))
-		.pipe(sourcemaps.write('./'))
-		.pipe(gulp.dest(paths.cssDestination));
-});
+// lost, rucksack, sourcemaps
+// gulp.task('styles', function() {
+// 	return gulp.src(paths.cssSource + '**/*.css')
+// 		.pipe(sourcemaps.init())
+// 		.pipe(postcss([
+// 			lost()
+// 		]))
+// 		.pipe(rucksack())
+// 		.pipe(sourcemaps.write('./'))
+// 		.pipe(gulp.dest(paths.cssDestination));
+// });
 
-gulp.watch(paths.cssSource + '**/*.css', ['styles']);
+// gulp.watch(paths.cssSource + '**/*.css', ['styles']);
 
-gulp.task('default', ['styles']);
+// gulp.task('default', ['styles']);
 
 // watch files for changes and reload
 // gulp.task('serve', function() {
@@ -37,4 +39,4 @@ gulp.task('default', ['styles']);
 // 	gulp.watch(['*.html', 'css/*.css'], {cwd: './src'}, reload);
 // });
 
-gulp.task("default", ["styles"]);
+// gulp.task("default", ["styles"]);
