@@ -8,8 +8,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "gulp-postcss": "^6.1.0",
-    "gulp-sourcemaps": "^1.6.0"
+    "gulp-postcss": "^6.1.0"
   },
   "optionalDependencies": {},
   "engines": {
