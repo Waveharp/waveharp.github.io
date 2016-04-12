@@ -1,8 +1,8 @@
 ### To Do
 - much the same as the Boardy framework, minus the Redux stuff
 - [ ] install postCSS
-- [ ] install Lost
-- [ ] install Rucksack
-	- [ ] and autoprefixer
+- [x] install Lost
+- [x] install Rucksack
+	- [x] and autoprefixer
 - [ ] install precss
 - [ ] configure browser-sync

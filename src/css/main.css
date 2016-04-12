@@ -1,7 +1,12 @@
 body {
-	background-color: blue;
+	background-color: purple;
+	display: flex;
 }
 
 li {
-	lost-column: 1/4;
+	lost-column: 1/5;
+}
+
+.respType {
+	font-size: responsive;
 }
