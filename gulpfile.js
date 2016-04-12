@@ -48,9 +48,20 @@ gulp.task('browser-sync', function() {
 		}
 	});
 
-	gulp.watch('css/*.css', ['styles']);
-	gulp.watch('src/*.html').on('change', reload);
+	// gulp.watch('css/*.css', ['styles']);
+	// gulp.watch('src/*.html').on('change', reload);
+});
+
+// Watch
+gulp.task('watch', function() {
+
+	// Watch css files
+	gulp.watch('css/*.css', ['styles', reload]);
+
+	// Watch html files
+	gulp.watch('*.html', reload);
+
 });
 
 
-gulp.task('default', ['browser-sync']);
+gulp.task('default', ['styles', 'browser-sync', 'watch']);
