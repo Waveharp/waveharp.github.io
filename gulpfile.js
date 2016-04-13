@@ -42,13 +42,14 @@ gulp.task('styles', function() {
 });
 
 // Start static server and watch files
-gulp.task('browser-sync', ['styles'], function() {
+gulp.task('browser-sync', function() {
 	browserSync({
 		server: {
 			baseDir: './src'
 		}
 	});
-	gulp.watch('./css/*.css', ['styles']);
+	gulp.watch(['*.html', 'css/**/*.css'], {cwd: 'src'}, reload);
+	// gulp.watch('./css/*.css');
 	// gulp.watch('./*.html').on('change', reload);
 });
 
