@@ -4,7 +4,7 @@ var gulp 				= require('gulp'),
     lost 				= require('lost'),
     rucksack    = require('rucksack-css');
 
-var browserSync = require('browser-sync').create();
+var browserSync = require('browser-sync');
 var reload 			= browserSync.reload;
 
 // PostCSS config
@@ -28,7 +28,7 @@ var paths = {
 
 // Styles - PostCSS, Lost, Rucksack, sourcemaps
 gulp.task('styles', function() {
-	return gulp.src(paths.cssSource + '**/*.css')
+	return gulp.src('./src/css/*.css')
 		.pipe(sourcemaps.init())
 		.pipe(postcss([
 			lost(),
@@ -37,26 +37,27 @@ gulp.task('styles', function() {
 			})
 		]))
 		.pipe(sourcemaps.write('./'))
-		.pipe(gulp.dest(paths.cssDestination));
+		.pipe(gulp.dest('./dist/css'))
+		.pipe(reload({stream: true}));
 });
 
 // Start static server and watch files
-gulp.task('browser-sync', function() {
-	browserSync.init({
+gulp.task('browser-sync', ['styles'], function() {
+	browserSync({
 		server: {
-			baseDir: 'src'
+			baseDir: './src'
 		}
 	});
-
-	// gulp.watch('css/*.css', ['styles']);
-	// gulp.watch('src/*.html').on('change', reload);
+	gulp.watch('./css/*.css', ['styles']);
+	// gulp.watch('./*.html').on('change', reload);
 });
+
 
 // Watch
 gulp.task('watch', function() {
 
 	// Watch css files
-	gulp.watch('css/*.css', ['styles', reload]);
+	gulp.watch('./src/**/*.css', ['styles', reload]);
 
 	// Watch html files
 	gulp.watch('*.html', reload);
@@ -64,4 +65,4 @@ gulp.task('watch', function() {
 });
 
 
-gulp.task('default', ['styles', 'browser-sync', 'watch']);
+gulp.task('default', ['browser-sync']);
