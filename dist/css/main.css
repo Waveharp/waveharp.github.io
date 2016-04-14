@@ -1,9 +1,6 @@
 body {
 	background-color: dodgerblue;
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
+	/*display: flex;*/
 }
 
 li {
