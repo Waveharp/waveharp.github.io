@@ -48,9 +48,9 @@ gulp.task('browser-sync', function() {
 			baseDir: './src'
 		}
 	});
-	gulp.watch(['*.html', 'css/**/*.css'], {cwd: 'src'}, reload);
-	// gulp.watch('./css/*.css');
-	// gulp.watch('./*.html').on('change', reload);
+	// gulp.watch(['*.html', 'css/**/*.css'], {cwd: 'src'}, reload);
+	gulp.watch('src/css/*.css', ['styles']);
+	gulp.watch('src/*.html').on('change', reload);
 });
 
 
