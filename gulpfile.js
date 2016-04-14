@@ -7,24 +7,18 @@ var gulp 				= require('gulp'),
 var browserSync = require('browser-sync');
 var reload 			= browserSync.reload;
 
-// PostCSS config
-// gulp.task('css', function () {
-// 	var processors = [
-// 		rucksack(),
-// 	];
-// 	return gulp.src('./src/*.css')
-// 		.pipe(sourcemaps.init())
-// 		.pipe(postcss(processors))
-// 		.pipe(sourcemaps.write('.'))
-// 		.pipe(gulp.dest('./dist'));
-// });
-
-
-
-var paths = {
-	cssSource: 'src/css/',
-	cssDestination: 'dist/css/'
-};
+// Basic PostCSS config
+gulp.task('css', function () {
+	var processors = [
+		lost(),
+		rucksack({autoprefixer: true}),
+	];
+	return gulp.src('src/*.css')
+		.pipe(sourcemaps.init())
+		.pipe(postcss(processors))
+		.pipe(sourcemaps.write('.'))
+		.pipe(gulp.dest('./dist'));
+});
 
 // Styles - PostCSS, Lost, Rucksack, sourcemaps
 gulp.task('styles', function() {
@@ -66,4 +60,4 @@ gulp.task('watch', function() {
 });
 
 
-gulp.task('default', ['browser-sync']);
+gulp.task('default', ['css']);
