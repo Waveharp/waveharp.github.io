@@ -19,13 +19,6 @@ var reload 			= browserSync.reload;
 // 		.pipe(gulp.dest('./dist'));
 // });
 
-
-
-var paths = {
-	cssSource: 'src/css/',
-	cssDestination: 'dist/css/'
-};
-
 // Styles - PostCSS, Lost, Rucksack, sourcemaps
 gulp.task('styles', function() {
 	return gulp.src('./src/css/*.css')
