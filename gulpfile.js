@@ -7,18 +7,6 @@ var gulp 				= require('gulp'),
 var browserSync = require('browser-sync');
 var reload 			= browserSync.reload;
 
-// PostCSS config
-// gulp.task('css', function () {
-// 	var processors = [
-// 		rucksack(),
-// 	];
-// 	return gulp.src('./src/*.css')
-// 		.pipe(sourcemaps.init())
-// 		.pipe(postcss(processors))
-// 		.pipe(sourcemaps.write('.'))
-// 		.pipe(gulp.dest('./dist'));
-// });
-
 // Styles - PostCSS, Lost, Rucksack, sourcemaps
 gulp.task('styles', function() {
 	return gulp.src('./src/css/*.css')
@@ -41,11 +29,7 @@ gulp.task('browser-sync', function() {
 			baseDir: './dist'
 		}
 	});
-	// gulp.watch(['*.html', 'css/**/*.css'], {cwd: 'src'}, reload);
-	// gulp.watch('src/css/*.css', ['styles']);
-	// gulp.watch('src/*.html').on('change', reload);
 });
-
 
 // Watch
 gulp.task('watch', function() {
@@ -57,6 +41,5 @@ gulp.task('watch', function() {
 	gulp.watch('dist/*.html', reload);
 
 });
-
 
 gulp.task('default', ['browser-sync', 'watch', 'styles']);
