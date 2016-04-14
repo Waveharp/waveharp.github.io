@@ -38,7 +38,7 @@ gulp.task('styles', function() {
 gulp.task('browser-sync', function() {
 	browserSync({
 		server: {
-			baseDir: './src'
+			baseDir: './dist'
 		}
 	});
 	// gulp.watch(['*.html', 'css/**/*.css'], {cwd: 'src'}, reload);
@@ -54,7 +54,7 @@ gulp.task('watch', function() {
 	gulp.watch('./src/**/*.css', ['styles', reload]);
 
 	// Watch html files
-	gulp.watch('src/*.html', reload);
+	gulp.watch('dist/*.html', reload);
 
 });
 
