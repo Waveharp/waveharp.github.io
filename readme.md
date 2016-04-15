@@ -1,8 +1,8 @@
 ### To Do
-- much the same as the Boardy framework, minus the Redux stuff
-- [ ] install postCSS
-- [x] install Lost
-- [x] install Rucksack
-	- [x] and autoprefixer
-- [ ] install precss
-- [ ] configure browser-sync
+- [x] install tools, build framework, setup project
+- [ ] style fixed navigation header
+- [ ] use Trianglify(http://qrohlf.com/trianglify/)
+- [ ] finish adding content
+- [ ] writeups for each project in portfolio
+- [ ] writeup for actually portfolio
+- [ ] start blog w/ Jekyll 

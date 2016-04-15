@@ -1,5 +1,44 @@
+/*
+	Global Styles
+*/
+
+/* Support Flexbox layouts with Lost Grid */
+
 body {
 	background-color: dodgerblue;
+}
+
+/*
+	Playing with Lost Grid
+*/
+
+nav.nav-header {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	*zoom: 1;
+}
+
+nav.nav-header:before {
+	content: '';
+	display: table;
+}
+
+nav.nav-header:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+section {
+	width: 100%;
+	-webkit-box-flex: 0;
+	-webkit-flex: 0 0 auto;
+	    -ms-flex: 0 0 auto;
+	        flex: 0 0 auto;
+	height: calc(99.99% * 1/4 - (30px - 30px * 1/4));
+	margin-bottom: 30px;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -10,20 +49,6 @@ body {
 	max-width: 1400px;
 	margin-left: auto;
 	margin-right: auto;
-}
-
-/*
-	Playing with Lost Grid
-*/
-
-section {
-	width: 100%;
-	-webkit-box-flex: 0;
-	-webkit-flex: 0 0 auto;
-	    -ms-flex: 0 0 auto;
-	        flex: 0 0 auto;
-	height: calc(99.99% * 1/4 - (30px - 30px * 1/4));
-	margin-bottom: 30px;
 }
 
 section:last-child {
@@ -38,6 +63,7 @@ section:last-child {
 	    -ms-flex: 0 0 auto;
 	        flex: 0 0 auto;
 	width: calc(99.99% * 1/2 - (30px - 30px * 1/2));
+	max-height: 12rem;
 }
 
 .profile-pic:nth-child(1n) {
@@ -80,6 +106,8 @@ section:last-child {
 	margin-right: 0;
 }
 
+
+
 /*
 	Navigation
 */
@@ -106,13 +134,12 @@ section:last-child {
 	list-style: none;
 }
 
-.main-logo:first-child {
-	/*margin-right: auto;*/
-	/*flex-grow: 1;*/
-}
-
 .main-logo h1 {
 	font-size: 2.5rem;
+	-webkit-box-flex: 1;
+	-webkit-flex-grow: 1;
+	    -ms-flex-positive: 1;
+	        flex-grow: 1;
 }
 
 .main-logo a,
@@ -123,5 +150,99 @@ section:last-child {
 	padding: 8px 15px;
 	position: relative;
 	overflow: hidden;
+}
+
+
+
+/*
+	Intro
+*/
+
+/*.intro {
+	padding-top: 5rem;
+	margin-top: 15rem;
+}*/
+
+
+
+/*
+	About
+*/
+
+
+
+/*
+	Portfolio
+*/
+
+.portfolio {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+}
+
+.portfolio h3 {
+	width: 100%;
+	-webkit-box-flex: 0;
+	-webkit-flex: 0 0 auto;
+	    -ms-flex: 0 0 auto;
+	        flex: 0 0 auto;
+	height: calc(99.99% * 1 - (30px - 30px * 1));
+	margin-bottom: 30px;
+}
+
+.portfolio h3:last-child {
+	margin-bottom: 0;
+}
+
+.project {
+	padding: 2%;
+	-webkit-box-flex: 1;
+	-webkit-flex-grow: 1;
+	    -ms-flex-positive: 1;
+	        flex-grow: 1;
+	-webkit-flex-basis: 46%;
+	    -ms-flex-preferred-size: 46%;
+	        flex-basis: 46%;
+	text-align: center;
+}
+
+.project-image img {
+	border: black solid 1px;
+	max-width: 100%;
+}
+
+.project-info {
+	/*margin: auto;*/
+}
+
+
+
+/*
+	Contact
+*/
+
+
+
+/* 
+	Footer
+*/
+
+.bottom-nav li {
+	list-style: none;
+	display: inline;
+}
+
+
+
+/*
+	Media Queries
+*/
+
+@media (max-width: 920px) {
 }
 /*# sourceMappingURL=main.css.map */
