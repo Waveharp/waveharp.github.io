@@ -1,5 +1,15 @@
 body {
 	background-color: dodgerblue;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	    -ms-flex-flow: row wrap;
+	        flex-flow: row wrap;
+	max-width: 1400px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /*
@@ -7,44 +17,67 @@ body {
 */
 
 section {
-	*zoom: 1;
-	max-width: 980px;
-	margin-left: auto;
-	margin-right: auto;
+	width: 100%;
+	-webkit-box-flex: 0;
+	-webkit-flex: 0 0 auto;
+	    -ms-flex: 0 0 auto;
+	        flex: 0 0 auto;
+	height: calc(99.99% * 1/4 - (30px - 30px * 1/4));
+	margin-bottom: 30px;
 }
 
-section:before {
-	content: '';
-	display: table;
+section:last-child {
+	margin-bottom: 0;
 }
 
-section:after {
-	content: '';
-	display: table;
-	clear: both;
-}
-
-div {
+.profile-pic {
+	border-radius: 50%;
+	max-width: 12rem;
+	-webkit-box-flex: 0;
+	-webkit-flex: 0 0 auto;
+	    -ms-flex: 0 0 auto;
+	        flex: 0 0 auto;
 	width: calc(99.99% * 1/2 - (30px - 30px * 1/2));
 }
 
-div:nth-child(1n) {
-	float: left;
+.profile-pic:nth-child(1n) {
 	margin-right: 30px;
-	clear: none;
 }
 
-div:last-child {
+.profile-pic:last-child {
 	margin-right: 0;
 }
 
-div:nth-child(2n) {
-	margin-right: 0;
+.profile-pic:nth-child(2n) {
 	float: right;
 }
 
-div:nth-child(2n + 1) {
-	clear: left;
+.profile-pic:nth-child(2n) {
+	margin-right: 0;
+}
+
+.about-content {
+	-webkit-box-flex: 0;
+	-webkit-flex: 0 0 auto;
+	    -ms-flex: 0 0 auto;
+	        flex: 0 0 auto;
+	width: calc(99.99% * 1/2 - (30px - 30px * 1/2));
+}
+
+.about-content:nth-child(1n) {
+	margin-right: 30px;
+}
+
+.about-content:last-child {
+	margin-right: 0;
+}
+
+.about-content:nth-child(2n) {
+	float: right;
+}
+
+.about-content:nth-child(2n) {
+	margin-right: 0;
 }
 
 /*
@@ -61,19 +94,7 @@ div:nth-child(2n + 1) {
 	width: 100%;
 	background: #f4f5f6;
 	height: 4rem;
-	display: flex; 
-}
-
-.main-nav > * {
-	-webkit-box-pack: start;
-	-webkit-justify-content: flex-start;
-	    -ms-flex-pack: start;
-	        justify-content: flex-start;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	    -ms-flex-align: center;
-	            -ms-grid-row-align: center;
-	        align-items: center;
+	z-index: 99;
 }
 
 .main-nav li {

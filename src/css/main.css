@@ -1,5 +1,8 @@
+@lost flexbox flex;
+
 body {
 	background-color: dodgerblue;
+	lost-center: 1400px;
 }
 
 /*
@@ -7,10 +10,16 @@ body {
 */
 
 section {
-	lost-center: 980px;
+	lost-row: 1/4;
 }
 
-div {
+.profile-pic {
+	border-radius: 50%;
+	max-width: 12rem;
+	lost-column: 1/2;
+}
+
+.about-content {
 	lost-column: 1/2;
 }
 
@@ -25,7 +34,7 @@ div {
 	width: 100%;
 	background: #f4f5f6;
 	height: 4rem;
-	lost-align: left flex; 
+	z-index: 99;
 }
 
 .main-nav li {
