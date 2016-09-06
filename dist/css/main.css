@@ -14,7 +14,6 @@ body {
 
 nav.nav-header {
 	display: -webkit-box;
-	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
 	*zoom: 1;
@@ -34,18 +33,15 @@ nav.nav-header:after {
 section {
 	width: 100%;
 	-webkit-box-flex: 0;
-	-webkit-flex: 0 0 auto;
 	    -ms-flex: 0 0 auto;
 	        flex: 0 0 auto;
 	height: calc(99.99% * 1/4 - (30px - 30px * 1/4));
 	margin-bottom: 30px;
 	display: -webkit-box;
-	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
-	-webkit-flex-flow: row wrap;
-	    -ms-flex-flow: row wrap;
-	        flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	    flex-flow: row wrap;
 	max-width: 1400px;
 	margin-left: auto;
 	margin-right: auto;
@@ -59,7 +55,6 @@ section:last-child {
 	border-radius: 50%;
 	max-width: 12rem;
 	-webkit-box-flex: 0;
-	-webkit-flex: 0 0 auto;
 	    -ms-flex: 0 0 auto;
 	        flex: 0 0 auto;
 	width: calc(99.99% * 1/2 - (30px - 30px * 1/2));
@@ -68,6 +63,7 @@ section:last-child {
 
 .profile-pic:nth-child(1n) {
 	margin-right: 30px;
+	margin-left: 0;
 }
 
 .profile-pic:last-child {
@@ -75,16 +71,12 @@ section:last-child {
 }
 
 .profile-pic:nth-child(2n) {
-	float: right;
-}
-
-.profile-pic:nth-child(2n) {
 	margin-right: 0;
+	margin-left: auto;
 }
 
 .about-content {
 	-webkit-box-flex: 0;
-	-webkit-flex: 0 0 auto;
 	    -ms-flex: 0 0 auto;
 	        flex: 0 0 auto;
 	width: calc(99.99% * 1/2 - (30px - 30px * 1/2));
@@ -92,6 +84,7 @@ section:last-child {
 
 .about-content:nth-child(1n) {
 	margin-right: 30px;
+	margin-left: 0;
 }
 
 .about-content:last-child {
@@ -99,11 +92,8 @@ section:last-child {
 }
 
 .about-content:nth-child(2n) {
-	float: right;
-}
-
-.about-content:nth-child(2n) {
 	margin-right: 0;
+	margin-left: auto;
 }
 
 
@@ -114,7 +104,6 @@ section:last-child {
 
 .main-nav {
 	display: -webkit-box;
-	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
 	position: fixed;
@@ -126,9 +115,8 @@ section:last-child {
 }
 
 .main-nav li {
-	-webkit-align-self: center;
-	    -ms-flex-item-align: center;
-	        align-self: center;
+	-ms-flex-item-align: center;
+	    align-self: center;
 	margin-left: 8px;
 	margin-right: 8px;
 	list-style: none;
@@ -137,7 +125,6 @@ section:last-child {
 .main-logo h1 {
 	font-size: 2.5rem;
 	-webkit-box-flex: 1;
-	-webkit-flex-grow: 1;
 	    -ms-flex-positive: 1;
 	        flex-grow: 1;
 }
@@ -177,18 +164,15 @@ section:last-child {
 
 .portfolio {
 	display: -webkit-box;
-	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
-	-webkit-flex-wrap: wrap;
-	    -ms-flex-wrap: wrap;
-	        flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
 }
 
 .portfolio h3 {
 	width: 100%;
 	-webkit-box-flex: 0;
-	-webkit-flex: 0 0 auto;
 	    -ms-flex: 0 0 auto;
 	        flex: 0 0 auto;
 	height: calc(99.99% * 1 - (30px - 30px * 1));
@@ -202,12 +186,10 @@ section:last-child {
 .project {
 	padding: 2%;
 	-webkit-box-flex: 1;
-	-webkit-flex-grow: 1;
 	    -ms-flex-positive: 1;
 	        flex-grow: 1;
-	-webkit-flex-basis: 46%;
-	    -ms-flex-preferred-size: 46%;
-	        flex-basis: 46%;
+	-ms-flex-preferred-size: 46%;
+	    flex-basis: 46%;
 	text-align: center;
 }
 
